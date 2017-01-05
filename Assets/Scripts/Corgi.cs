@@ -8,6 +8,8 @@ public class Corgi : MonoBehaviour {
     public float speedV;
     public float maxSpeed;
     public float friction;
+    [Range(0.0f, 1.0f)]
+    public float inputDelay;
     private Transform player;
     private Animator animator;
     private SpriteRenderer sp;
@@ -31,7 +33,11 @@ public class Corgi : MonoBehaviour {
         {
             animator.SetTrigger("Idle");
         }
-        else if (speedUpdated > speedH * 4 || -speedH * 4 > speedUpdated)
+        else if((Input.GetAxis("Horizontal") > inputDelay || -inputDelay > Input.GetAxis("Horizontal")) && Input.GetAxisRaw("Horizontal") != 0)
+        {
+            animator.SetTrigger("Run");
+        }
+        else if ((Input.GetAxis("Vertical") > inputDelay || -inputDelay > Input.GetAxis("Vertical")) && Input.GetAxisRaw("Horizontal") == 0)
         {
             animator.SetTrigger("Walk");
         }
@@ -50,7 +56,7 @@ public class Corgi : MonoBehaviour {
     {
         speedUpdated += Input.GetAxisRaw("Horizontal") * speedH;
         speedUpdated = Mathf.Clamp(speedUpdated, -maxSpeed, maxSpeed);
-        Debug.Log(speedUpdated + " " + friction + " ");
+        Debug.Log(Input.GetAxis("Horizontal"));
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             if (Mathf.Abs(speedUpdated) < friction)
