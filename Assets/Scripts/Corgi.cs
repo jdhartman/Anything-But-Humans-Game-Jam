@@ -3,27 +3,29 @@ using System.Collections;
 
 public class Corgi : MonoBehaviour {
 
-
+    //public movement variables
     public float speedH;
     public float speedV;
     public float maxSpeed;
     public float friction;
     [Range(0.0f, 1.0f)]
     public float inputDelay;
-    private Transform player;
+
+    //private variables
+    private Rigidbody2D player;
     private Animator animator;
     private SpriteRenderer sp;
-    private float newScale;
     private float speedUpdated;
+    private float pointCount;
 
     // Use this for initialization
     void Start ()
     {
-        player = GetComponent<Transform>();
+        player = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
-        newScale = Mathf.Clamp(player.transform.localScale.x, -1, 1);
-        speedUpdated = 0; 
+        speedUpdated = 0;
+        pointCount = 0;
 	}
 	
     void Animate()
@@ -51,31 +53,49 @@ public class Corgi : MonoBehaviour {
         }
         
     }
-	// Update is called once per frame
-	void Update ()
+
+    public void addToPointCount()
+    {
+        pointCount++;
+    }
+
+    public float getPointCount()
+    {
+        return this.pointCount;
+    }
+
+    void playerMovement()
     {
         speedUpdated += Input.GetAxisRaw("Horizontal") * speedH;
         speedUpdated = Mathf.Clamp(speedUpdated, -maxSpeed, maxSpeed);
-        Debug.Log(Input.GetAxis("Horizontal"));
+        //Debug.Log(Input.GetAxis("Horizontal"));
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             if (Mathf.Abs(speedUpdated) < friction)
             {
                 speedUpdated = 0;
-                player.transform.Translate(speedUpdated, Input.GetAxis("Vertical") * speedH, 0);
+                player.velocity = new Vector3(speedUpdated, Input.GetAxis("Vertical") * speedV, 0);
             }
             else if (Mathf.Abs(speedUpdated) > friction)
             {
                 speedUpdated -= friction * Mathf.Clamp(speedUpdated, -1, 1);
             }
 
-        } else if ((speedUpdated > 0 && Input.GetAxisRaw("Horizontal") < 0) || (speedUpdated < 0 && Input.GetAxisRaw("Horizontal") > 0))
-        {
-            speedUpdated -= friction * Mathf.Clamp(speedUpdated, -1, 1);
-        }
+        } //else if ((speedUpdated > 0 && Input.GetAxisRaw("Horizontal") < 0) || (speedUpdated < 0 && Input.GetAxisRaw("Horizontal") > 0))
+          //{
+          //speedUpdated -= friction * Mathf.Clamp(speedUpdated, -1, 1);
+          //}
 
-
-        player.transform.Translate(speedUpdated, Input.GetAxis("Vertical") * speedV, 0);
+        player.velocity = new Vector3(speedUpdated, Input.GetAxis("Vertical") * speedV, 0);
+    }
+	// Update is called once per frame
+	void Update ()
+    {
         Animate();
 	}
+
+    void FixedUpdate()
+    {
+        playerMovement();
+    }
 }
