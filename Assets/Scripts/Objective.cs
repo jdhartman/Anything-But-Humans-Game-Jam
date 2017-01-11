@@ -4,8 +4,8 @@ using System.Collections;
 public class Objective : MonoBehaviour {
 
     // Use this for initialization
-    public Corgi Corgi;
-    public Transform transform;
+    public Controller controller;
+    private Transform transform;
     
 
 	void Start () {
@@ -18,9 +18,9 @@ public class Objective : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Collected");
-            Corgi.addToPointCount();
-            transform.Translate(5, 5, 0);
-            Debug.Log("Total Points: " + Corgi.getPointCount());
+            controller.addToPointCount();
+            controller.moveObjective(transform);
+            Debug.Log("Total Points: " + controller.getPointCount());
         }
     }
 }

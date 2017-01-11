@@ -16,7 +16,7 @@ public class Corgi : MonoBehaviour {
     private Animator animator;
     private SpriteRenderer sp;
     private float speedUpdated;
-    private float pointCount;
+    
 
     // Use this for initialization
     void Start ()
@@ -25,7 +25,6 @@ public class Corgi : MonoBehaviour {
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
         speedUpdated = 0;
-        pointCount = 0;
 	}
 	
     void Animate()
@@ -52,16 +51,6 @@ public class Corgi : MonoBehaviour {
             sp.flipX = true;
         }
         
-    }
-
-    public void addToPointCount()
-    {
-        pointCount++;
-    }
-
-    public float getPointCount()
-    {
-        return this.pointCount;
     }
 
     void playerMovement()

@@ -33,3 +33,8 @@ sysinfo.txt
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
+*.exe
+Build1_Data/app.info
+*.dll
+*.tmx
+Assets/Tiled Maps/Grass_starter.tmx.meta
