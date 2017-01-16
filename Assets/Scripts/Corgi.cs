@@ -53,6 +53,11 @@ public class Corgi : MonoBehaviour {
         
     }
 
+    void Depth()
+    {
+
+    }
+
     void playerMovement()
     {
         speedUpdated += Input.GetAxisRaw("Horizontal") * speedH;
