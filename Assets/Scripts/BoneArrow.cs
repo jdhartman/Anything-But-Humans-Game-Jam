@@ -19,11 +19,9 @@ public class BoneArrow : MonoBehaviour {
         {
             arrow.layer = 0;
             renderer.sortingLayerName = "Default";
+
             difference = transform.position - bone.transform.position;
             angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg + 90;
-            Debug.Log(angle);
-            //Vector3 newDir = Vector3.RotateTowards(transform.position, difference, 60, 200);
-            //transform.Rotate(Vector3.forward, angle / Time.deltaTime, Space.Self);
             transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
         }
         else

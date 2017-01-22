@@ -5,6 +5,7 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenu;
+    public GameObject optionsMenu;
 
 	public void Resume()
     {
@@ -16,6 +17,18 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
         Time.timeScale = 1;
+    }
+
+    public void Options()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void backToPause()
+    {
+        pauseMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
 
     public void exitToMainMenu(string scene)

@@ -7,9 +7,15 @@ public class Controller : MonoBehaviour {
     public Text score;
     public Text timer;
     public Text finalScore;
+
     public float initialTime;
+    public float maxTime;
+    public float plusTime;
+
     public GameObject pauseMenu;
+    public GameObject optionsMenu;
     public GameObject endGameMenu;
+    
 
     private float runningTime;
     private bool isPause;
@@ -20,6 +26,7 @@ public class Controller : MonoBehaviour {
     // Use this for initialization
     void Start() {
         pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
         endGameMenu.SetActive(false);
         pointCount = 0;
         runningTime = initialTime;
@@ -46,9 +53,9 @@ public class Controller : MonoBehaviour {
     {
         pointCount++;
         score.text = "Score: " + pointCount.ToString();
-        if(runningTime < 45)
+        if(runningTime < maxTime)
         {
-            runningTime += 2.5f;
+            runningTime += plusTime;
         }
         
     }
@@ -79,14 +86,34 @@ public class Controller : MonoBehaviour {
             pauseMenu.SetActive(false);
         }
     }
+
+    private void changeTime()
+    {
+        if (runningTime > 5)
+        {
+            if (Time.timeScale < 1)
+            {
+                Time.timeScale += .05f;
+            }
+        }
+        else if (runningTime < 5)
+        {
+            if (Time.timeScale > .5)
+            {
+                Time.timeScale -= .005f;
+            }
+        }
+        else Time.timeScale = 1;
+    }
     // Update is called once per frame
-    void Update () {
-        if(runningTime > 0)
+    void Update() {
+        if (runningTime > 0)
         {
             runningTime -= Time.deltaTime;
+            changeTime();
         }
         else
-        {
+        { 
             finalScore.text = score.text;
             endGameMenu.SetActive(true);
             Time.timeScale = 0;
