@@ -7,10 +7,12 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject optionsMenu;
 
+    public Controller controller;
 	public void Resume()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        controller.pauseGame();
     }
 
     public void Restart(string scene)

@@ -9,4 +9,8 @@ public class LoadSceneOnClick: MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
         Time.timeScale = 1;
     }
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
 }

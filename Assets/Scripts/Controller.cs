@@ -72,7 +72,7 @@ public class Controller : MonoBehaviour {
 
     
 
-    private void pauseGame()
+    public void pauseGame()
     {
         isPause = !isPause;
         if (isPause)
@@ -89,7 +89,11 @@ public class Controller : MonoBehaviour {
 
     private void changeTime()
     {
-        if (runningTime > 5)
+        if(isPause)
+        {
+            Time.timeScale = 0;
+        }
+        else if (runningTime > 5)
         {
             if (Time.timeScale < 1)
             {

@@ -19,21 +19,41 @@ Platform assembly: E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data
 Loading E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.044 seconds
+- Completed reload, in  0.036 seconds
 Platform assembly: E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Programming\Unity\Anything-But-Humans_Game-jam\Build1_Data\Managed\System.dll (this message is harmless)
 desktop: 3840x2160 60Hz; virtual: 3840x2160 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.395860 ms
+UnloadTime: 3.632056 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 17.968527 ms
+UnloadTime: 4.144623 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 613.
-Total: 0.424957 ms (FindLiveObjects: 0.039537 ms CreateObjectMapping: 0.027306 ms MarkObjects: 0.351286 ms  DeleteObjects: 0.005688 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1003.
+Total: 10.596366 ms (FindLiveObjects: 0.160141 ms CreateObjectMapping: 0.109226 ms MarkObjects: 10.306803 ms  DeleteObjects: 0.018488 ms)
 
-5
+9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -61,11 +81,19 @@ Total Points: 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Collected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Total Points: 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -77,11 +105,27 @@ Total Points: 5
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Collected
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Total Points: 6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -93,38 +137,34 @@ Total Points: 7
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Collected
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Total Points: 8
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.537881 ms
+UnloadTime: 1.061257 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 613.
-Total: 0.257420 ms (FindLiveObjects: 0.044657 ms CreateObjectMapping: 0.013084 ms MarkObjects: 0.196834 ms  DeleteObjects: 0.002844 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1003.
+Total: 1.015178 ms (FindLiveObjects: 0.115199 ms CreateObjectMapping: 0.073101 ms MarkObjects: 0.812938 ms  DeleteObjects: 0.013084 ms)
 
-5
+9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Collected
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Total Points: 1
+Coroutine Started
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.586520 ms
+UnloadTime: 1.107622 ms
 
-Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 321.
-Total: 0.296958 ms (FindLiveObjects: 0.033848 ms CreateObjectMapping: 0.013084 ms MarkObjects: 0.157865 ms  DeleteObjects: 0.080497 ms)
+Unloading 60 unused Assets to reduce memory usage. Loaded Objects now: 327.
+Total: 14.387996 ms (FindLiveObjects: 0.036408 ms CreateObjectMapping: 0.012515 ms MarkObjects: 0.131412 ms  DeleteObjects: 14.207659 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 33484 -> priority: 1 
-  Thread -> id: 38e28 -> priority: 1 
+  Thread -> id: 16cac -> priority: 1 
+  Thread -> id: 15eb8 -> priority: 1 
