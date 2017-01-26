@@ -95,17 +95,11 @@ public class Controller : MonoBehaviour {
         }
         else if (runningTime > 5)
         {
-            if (Time.timeScale < 1)
-            {
-                Time.timeScale += .05f;
-            }
+            timer.fontSize = 33;
         }
         else if (runningTime < 5)
         {
-            if (Time.timeScale > .5)
-            {
-                Time.timeScale -= .005f;
-            }
+            timer.fontSize++;
         }
         else Time.timeScale = 1;
     }
