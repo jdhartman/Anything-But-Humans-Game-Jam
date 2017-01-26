@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour {
     public Text score;
     public Text timer;
     public Text finalScore;
+    public Text countText;
 
     public float initialTime;
     public float maxTime;
@@ -18,7 +19,9 @@ public class Controller : MonoBehaviour {
     
 
     private float runningTime;
+    private float countdown;
     private bool isPause;
+    private bool isCountdown;
     private float pointCount;
     private float numOfTargets;
     private GameObject[] targets;
@@ -29,8 +32,10 @@ public class Controller : MonoBehaviour {
         optionsMenu.SetActive(false);
         endGameMenu.SetActive(false);
         pointCount = 0;
+        countdown = 3;
         runningTime = initialTime;
         isPause = false;
+        isCountdown = false;
         Time.timeScale = 1;
 
         targets = GameObject.FindGameObjectsWithTag("Target");
@@ -75,7 +80,7 @@ public class Controller : MonoBehaviour {
     public void pauseGame()
     {
         isPause = !isPause;
-        if (isPause)
+        if (isPause || countdown > 0)
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
@@ -85,6 +90,25 @@ public class Controller : MonoBehaviour {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
         }
+    }
+
+    IEnumerator removeCountdown()
+    {
+        
+        if(!isCountdown)
+        {
+            Debug.Log("Remove Countdown");
+            countText.text = "Go!";
+            countdown = -1;
+            yield return new WaitForSeconds(.5f);
+            countText.CrossFadeAlpha(0, 1, false);
+        }
+        
+    }
+
+    public float getCountdown()
+    {
+        return this.countdown;
     }
 
     private void changeTime()
@@ -105,12 +129,26 @@ public class Controller : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
-        if (runningTime > 0)
+        if(countdown > .0001)
+        {
+            countdown -= (Time.deltaTime);
+            if(Mathf.Round(countdown * 1f) / 1f > 0)
+            {
+                countText.text = (Mathf.Round(countdown * 1f) / 1f).ToString();
+            }   
+        }
+        else
+        {
+            StartCoroutine(removeCountdown());
+            isCountdown = true;       
+        }
+
+        if (runningTime > 0 && countdown < 0)
         {
             runningTime -= Time.deltaTime;
             changeTime();
         }
-        else
+        else if(countdown < 0)
         { 
             finalScore.text = score.text;
             endGameMenu.SetActive(true);
