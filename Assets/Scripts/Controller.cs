@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject endGameMenu;
+    public AudioSource bark;
     
 
     private float runningTime;
@@ -57,6 +58,8 @@ public class Controller : MonoBehaviour {
     public void addToPointCount()
     {
         pointCount++;
+        bark.pitch = Random.Range(1f, 2f);
+        bark.Play();
         score.text = "Score: " + pointCount.ToString();
         if(runningTime < maxTime)
         {

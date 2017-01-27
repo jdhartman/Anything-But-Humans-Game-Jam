@@ -15,6 +15,7 @@ public class Cardinal : MonoBehaviour {
     private float someScale;
     private float peckTime;
     private string flyState;
+    private AudioSource flap;
 
     private bool startWait;
     private bool peckWait;
@@ -22,6 +23,8 @@ public class Cardinal : MonoBehaviour {
     // Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+        flap = GetComponent<AudioSource>();
+
         someScale = transform.localScale.x;
         transform.position = start.transform.position;
         flyState = "Idle";
@@ -124,10 +127,24 @@ public class Cardinal : MonoBehaviour {
         if (flyState == "toEnd")
         {
             transform.position = Vector2.MoveTowards(transform.position, end.transform.position, flySpeed * Time.deltaTime);
+            if(!flap.isPlaying)
+            {
+                flap.Play();
+            }
+            
+
         }
          else if(flyState == "toStart")
         {
             transform.position = Vector2.MoveTowards(transform.position, start.transform.position, flySpeed * Time.deltaTime);
+            if (!flap.isPlaying)
+            {
+                flap.Play();
+            }
+        }
+        else
+        {
+            flap.Stop();
         }
         
 
