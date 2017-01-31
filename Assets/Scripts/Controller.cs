@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour {
     public Text score;
     public Text timer;
     public Text finalScore;
+    public Text highScore;
     public Text countText;
 
     public float initialTime;
@@ -23,7 +24,7 @@ public class Controller : MonoBehaviour {
     private float countdown;
     private bool isPause;
     private bool isCountdown;
-    private float pointCount;
+    private int pointCount;
     private float numOfTargets;
     private GameObject[] targets;
     
@@ -51,9 +52,23 @@ public class Controller : MonoBehaviour {
         timer.text = (Mathf.Round(runningTime * 100f) / 100f).ToString();
     }
 
-    public float getPointCount()
+    public int getPointCount()
     {
         return this.pointCount;
+    }
+
+    public int getHighScore()
+    {
+        return PlayerPrefs.GetInt("highscore", 0);
+    }
+
+    public void storeHighScore(int newHighScore)
+    {
+        int oldHighScore = PlayerPrefs.GetInt("highscore", 0);
+        if (newHighScore > oldHighScore)
+        {
+            PlayerPrefs.SetInt("highscore", newHighScore);
+        }
     }
     public void addToPointCount()
     {
@@ -152,10 +167,21 @@ public class Controller : MonoBehaviour {
             changeTime();
         }
         else if(countdown < 0)
-        { 
+        {
+            
+            if (PlayerPrefs.GetInt("highscore", 0) < getPointCount())
+            {
+                highScore.text = "New High Score!";
+            }
+            else
+            {
+                highScore.text = "High score: " + PlayerPrefs.GetInt("highscore", 0);
+            }
             finalScore.text = score.text;
             endGameMenu.SetActive(true);
+            storeHighScore(getPointCount());
             Time.timeScale = 0;
+
         }
         setTimer();
 

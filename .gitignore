@@ -38,3 +38,13 @@ Build1_Data/app.info
 *.dll
 *.tmx
 Assets/Tiled Maps/Grass_starter.tmx.meta
+*.info
+Builds/Build v1.0_Data/globalgamemanagers
+*.resource
+Builds/Build v1.0_Data/sharedassets1.assets.resS
+*.resS
+Builds/Build v1.0_Data/Resources/unity_builtin_extra
+*.xml
+Builds/Build v1.0_Data/Mono/etc/mono/config
+*.ini
+Builds/Build v1.0_Data/Mono/etc/mono/2.0/web.config

@@ -6,11 +6,10 @@ public class Grass : MonoBehaviour {
 
     public float animSpeed;
     private Animator anim;
-    private AudioSource walk;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-        walk = GetComponent<AudioSource>();
+
         anim.speed = 0;
 	}
 
@@ -19,10 +18,7 @@ public class Grass : MonoBehaviour {
         if(collision.gameObject.tag == "Player" )
         {
             anim.speed = animSpeed;
-            if(!walk.isPlaying)
-            {
-                walk.Play();
-            }
+
 
         }
     }
@@ -31,7 +27,6 @@ public class Grass : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             anim.speed = 0;
-            walk.Stop();
         }
     }
 }
